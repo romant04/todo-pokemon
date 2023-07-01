@@ -24,7 +24,8 @@ export const Dashboard = () => {
             const allTodos: unknown = await todo.all()
             dispatch(initTodos(allTodos as TodoRecord[]))
         }
-        fetchTodos()
+        void fetchTodos()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
@@ -39,15 +40,17 @@ export const Dashboard = () => {
                     </Box>
                     <Divider variant="middle" color={theme.palette.primary.main} sx={{ m: 2 }} />
                     <Stack p={3} display="flex" gap={2} sx={{ maxHeight: '400px', overflow: 'auto' }}>
-                        {todos.map((item) => (
-                            <Todo
-                                name={item.name}
-                                date={item.date}
-                                description={item.description}
-                                id={item.id}
-                                key={item.id}
-                            />
-                        ))}
+                        {[...todos]
+                            .sort((a, b) => a.date.toDate().getTime() - b.date.toDate().getTime())
+                            .map((item) => (
+                                <Todo
+                                    name={item.name}
+                                    date={item.date}
+                                    description={item.description}
+                                    id={item.id}
+                                    key={item.id}
+                                />
+                            ))}
                     </Stack>
                 </Stack>
             </Stack>

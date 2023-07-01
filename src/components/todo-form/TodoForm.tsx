@@ -13,7 +13,7 @@ interface FormState {
 
 interface FormActions {
     type: 'set' | 'reset'
-    field?: string
+    field?: keyof FormState
     payload?: string | Date | null
 }
 
