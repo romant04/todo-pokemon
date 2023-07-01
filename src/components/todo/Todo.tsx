@@ -2,8 +2,9 @@ import { FC } from 'react'
 import { Box, Stack, Typography, useTheme } from '@mui/material'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { TodoRecord } from '@/components/todo/todo.interface'
 
-export const Todo: FC = () => {
+export const Todo: FC<TodoRecord> = ({ id, name, description, date }: TodoRecord) => {
     const theme = useTheme()
 
     return (
@@ -17,13 +18,13 @@ export const Todo: FC = () => {
         >
             <Stack>
                 <Typography variant="h6" fontWeight="bold" color="#FFFFFF">
-                    Title
+                    {name}
                 </Typography>
                 <Typography variant="body1" color="#E1E1E1" sx={{ maxWidth: '250px' }}>
-                    there is some description
+                    {description}
                 </Typography>
                 <Typography variant="body2" color="white" sx={{ mt: 1.5 }}>
-                    22.6.2022
+                    {date.toDate().toLocaleDateString()}
                 </Typography>
             </Stack>
             <Stack gap={2}>
