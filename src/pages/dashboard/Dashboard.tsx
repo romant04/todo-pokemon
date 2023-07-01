@@ -29,8 +29,8 @@ export const Dashboard = () => {
     }, [])
 
     return (
-        <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Stack sx={{ background: '#F4F4F4', borderRadius: 2 }}>
+        <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', p: 2 }}>
+            <Stack sx={{ background: '#F4F4F4', borderRadius: 2 }} width="max(50%, 500px)">
                 <Box sx={{ background: '#363636', borderRadius: '8px 8px 0 0', color: 'white' }} py={1} px={2}>
                     <Typography variant="h4">Todos ({todos.length})</Typography>
                 </Box>

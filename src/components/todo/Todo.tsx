@@ -60,6 +60,7 @@ export const Todo: FC<TodoRecord> = ({ id, name, description, date }: TodoRecord
         <Stack
             sx={{ background: theme.palette.primary.dark, borderRadius: 2 }}
             p={2}
+            gap={5}
             display="flex"
             flexDirection="row"
             justifyContent="space-between"
@@ -105,7 +106,7 @@ export const Todo: FC<TodoRecord> = ({ id, name, description, date }: TodoRecord
                         <Typography variant="h6" fontWeight="bold" color="#FFFFFF">
                             {name}
                         </Typography>
-                        <Typography variant="body1" color="#E1E1E1" sx={{ maxWidth: '250px' }}>
+                        <Typography variant="body1" color="#E1E1E1" sx={{ maxWidth: '500px' }}>
                             {description}
                         </Typography>
                         <Typography variant="body2" color="white" sx={{ mt: 1.5 }}>
