@@ -4,13 +4,14 @@ import { routeDashboard } from '@/router/routes/routeDashboard'
 import { CssBaseline } from '@mui/material'
 import * as React from 'react'
 import { ThemeSettingProvider } from '@/theme/theme'
+import { routePokemons } from '@/router/routes/routePokemons'
 
 const ReturnComponent = (Component: React.ComponentType) => {
     return <Component />
 }
 
 export const MainRouter = () => {
-    const allRoutes: IRoute[] = [...routePublic, ...routeDashboard]
+    const allRoutes: IRoute[] = [...routePublic, ...routeDashboard, ...routePokemons]
 
     return (
         <ThemeSettingProvider>
